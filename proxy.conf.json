@@ -1,0 +1,11 @@
+{
+  "/api": {
+    "target": "https://web-api.juejin.im",
+    "logLevel": "debug",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api": ""
+    }
+  }
+}

@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { BrochureComponent } from './brochure.component';
 
 @NgModule({
   imports: [
     RouterModule.forChild([
-      
+      {path: '', component: BrochureComponent}
     ])
   ],
-  declarations: [],
+  declarations: [BrochureComponent],
   providers: [
   ],
   exports: [ RouterModule ]
