@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http';
 
+// materail
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { RoutesModule } from './router/router.module';
 
@@ -15,6 +17,7 @@ import { Utils } from './util/utils'
   imports: [
     BrowserModule,
     FormsModule,
+    BrowserAnimationsModule,
     RoutesModule,
     HttpClientModule
   ],

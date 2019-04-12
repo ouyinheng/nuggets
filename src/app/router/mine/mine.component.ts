@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router'
 @Component({
   selector: 'app-mine',
   templateUrl: './mine.component.html',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MineComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(
+    private router:Router
+  ) { }
+  myColor:string = 'red';
   ngOnInit() {
   }
-
+  toLogin() {
+    this.router.navigate(['login'])
+  }
 }

@@ -1,0 +1,19 @@
+@each $key,$var in $colors {
+  .bg-#{$key} {
+    background-color: $var; 
+  }
+  .color-#{$key} {
+    color: $var; 
+  }
+}
+
+@each $key,$var in $fontcolor {
+  .font-color-#{$key} {
+    color: $var; 
+  }
+}
+@each $key,$var in $bordercolor {
+  .border-color-#{$key} {
+    border-color: $var; 
+  }
+}

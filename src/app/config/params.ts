@@ -1,4 +1,4 @@
-const title:Array<Object> = [
+export const title:Array<Object> = [
   {title: '推荐', _id: '21207e9ddb1de777adeaca7a2fb38030'},
   {title: '后端', _id: '5562b419e4b00c57d9b94ae2'},
   {title: '前端', _id: '5562b415e4b00c57d9b94ac8'},
