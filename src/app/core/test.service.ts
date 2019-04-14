@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class TestService {
 
   constructor() { }
-  showTitle() {
-    console.log('hello world')
+  static showTitle() {
+    console.log('hello world');
   }
 }

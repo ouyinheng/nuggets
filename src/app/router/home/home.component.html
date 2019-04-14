@@ -1,10 +1,20 @@
 <div class="home">
   <header class="title-group bg-p">
     <div class="title-list" [class.active]="active==i" *ngFor="let item of title;let i=index">
-      <button mat-button (click)="serActive(i)">{{item.title}}</button>
+      <button mat-button (click)="serActive(i)">{{item?.title}}</button>
     </div>
   </header>
+  <header></header>
   <section>
-
+    <div class="post-group">
+      <div class="post-items" *ngFor="let item of homeService.postData?.data.articleFeed.items.edges">
+        <div></div>
+        <div class="content">
+          <div class="title">{{item?.node.title}}</div>
+          <p>{{item?.node.content}}</p>
+        </div>
+        <div></div>
+      </div>
+    </div>
   </section>
 </div>

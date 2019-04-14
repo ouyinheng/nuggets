@@ -1,18 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Routes, RouterModule } from '@angular/router';
-import { ShareModule } from '../components/share.module'
+import { RouterModule } from '@angular/router';
+import { ShareModule } from '../components/share.module';
 import { MainComponent } from './main/main.component';
-import { LoginComponent } from './login/login.component'
+import { LoginComponent } from './login/login.component';
 @NgModule({
   imports: [
     CommonModule,
     ShareModule,
     RouterModule.forRoot([
       { path: '', redirectTo: 'main/home', pathMatch: 'full' },
-      { path: 'login', component: LoginComponent, data: { animation: 'hero' }},
-      { 
-        path: 'main',
+      { path: 'login', component: LoginComponent, data: { animation: 'login' }},
+      { path: 'main',
         component: MainComponent,
         children: [
           { path: 'home', loadChildren: '../home/homeRouter.module#HomeModule' },

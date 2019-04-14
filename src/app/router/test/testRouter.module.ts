@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TestService } from '../../core/test.service';
 
-import { LoginComponent } from './login/login.component'
+import { LoginComponent } from './login/login.component';
 @NgModule({
   imports: [
     RouterModule.forChild([
       {
-        path: '', 
+        path: '',
         component: LoginComponent,
         children: [
           { path: 'home', loadChildren: '../home/homeRouter.module#HomeModule' },

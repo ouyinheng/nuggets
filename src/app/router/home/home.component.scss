@@ -1,7 +1,14 @@
 .home {
+  position: absolute;
+  top: 0;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  overflow-y: auto;
   header {
     width: 100%;
-    height: 40px;
+    height: 50px;
+    line-height: 50px;
     display: flex;
     overflow: auto;
     color: whitesmoke;
@@ -10,11 +17,15 @@
     }
     .title-list {
       button {
-        height: 40px;
+        height: 50px;
+        color: #77BAFF;
       }
     }
     .active {
       position: relative;
+      button {
+        color: white;
+      }
       &::after {
         position: absolute;
         content: '';
@@ -23,6 +34,38 @@
         width: 100%;
         height: 2px;
         background-color: white;
+      }
+    }
+  }
+  .title-group {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  .post-group {
+    margin-top: 10px;
+    .post-items {
+      margin-top: 10px;
+      background-color: white;
+      box-sizing: border-box;
+      padding: 10px 15px;
+      .content {
+        .title {
+          font-weight: bold;
+          color: #303133;
+          font-size: 1.17rem;
+          padding-bottom: 4px;
+        }
+        p {
+          color: #909399;
+          width:100%;
+          line-height: 16px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          max-height:50px;
+        }
       }
     }
   }
