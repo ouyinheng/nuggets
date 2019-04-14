@@ -1,4 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -8,7 +9,8 @@ import { Component, OnInit, Inject } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   constructor(
-    @Inject('home') private homeService
+    @Inject('home') private homeService,
+    private router: Router
   ) { }
   title: any = [
     {title: '推荐', extensions: {query: {id: '21207e9ddb1de777adeaca7a2fb38030'}}},
@@ -21,7 +23,7 @@ export class HomeComponent implements OnInit {
     {title: '代码人生', _id: '5c9c7cca1b117f3c60fee548'},
     {title: '阅读', _id: '5562b428e4b00c57d9b94b9d'}
   ];
-  active: Number = 0;
+  active: number = 0;
   ngOnInit() {
     this.homeService.getHomeRecom({
       extensions: this.title[0].extensions,
@@ -30,7 +32,14 @@ export class HomeComponent implements OnInit {
       variables: {first: 20, after: '', order: 'POPULAR'}
     });
   }
-  serActive(active: Number) {
+  serActive(active: number) {
     this.active = active;
+  }
+  goPost(id: string) {
+    this.router.navigate(['main/home/post'], {
+      queryParams: {
+        id
+      }
+    })
   }
 }

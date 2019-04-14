@@ -19,8 +19,7 @@ import { LoginComponent } from './login/login.component';
           { path: 'brochure', loadChildren: '../brochure/brochureRouter.module#BrochureModule' },
           { path: 'search', loadChildren: '../search/searchRouter.module#SearchModule' },
           { path: 'mine', loadChildren: '../mine/mineRouter.module#MineModule' }
-        ],
-        data: { animation: 'heroes' }
+        ]
       }
     ])
   ],

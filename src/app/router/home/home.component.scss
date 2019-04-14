@@ -49,6 +49,20 @@
       background-color: white;
       box-sizing: border-box;
       padding: 10px 15px;
+      .header-icon {
+        img {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          margin-right: 10px;
+        }
+        span {
+          color: #909399;
+        }
+      }
+      .tag {
+        color: #909399;
+      }
       .content {
         .title {
           font-weight: bold;

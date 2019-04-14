@@ -7,13 +7,28 @@
   <header></header>
   <section>
     <div class="post-group">
-      <div class="post-items" *ngFor="let item of homeService.postData?.data.articleFeed.items.edges">
-        <div></div>
+      <div class="post-items" *ngFor="let item of homeService.postData?.data.articleFeed.items.edges" (click)="goPost(item.node.id)">
+        <div class="between -center">
+          <div class="header-icon flex -center py-2">
+            <img [src]="item?.node.user.avatarLarge" alt="不见了">
+            <span>{{item?.node.user.username}}</span>
+          </div>
+          <div class="tag">{{item?.node.tags[0].title}}</div>
+        </div>
         <div class="content">
           <div class="title">{{item?.node.title}}</div>
           <p>{{item?.node.content}}</p>
         </div>
-        <div></div>
+        <div class="flex -center font-sm py-2">
+          <p class="mr-2">
+            <span class="iconfont icon-zan mr-1 font-sm"></span>
+            <span>{{item?.node.likeCount}}</span>
+          </p>
+          <p>
+            <span class="iconfont icon-xiaoxi mr-1 font-sm"></span>
+            <span>{{item?.node.commentsCount || '评论'}}</span>
+          </p>
+        </div>
       </div>
     </div>
   </section>

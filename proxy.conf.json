@@ -16,5 +16,14 @@
     "pathRewrite": {
       "^/login": ""
     }
+  },
+  "/post": {
+    "target": "https://post-storage-api-ms.juejin.im/v1",
+    "logLevel": "debug",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/post": ""
+    }
   }
 }
