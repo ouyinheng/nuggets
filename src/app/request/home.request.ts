@@ -4,10 +4,10 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class BookMallService {
+export class HomeRequest {
   constructor(private http: HttpClient) {}
   // 获取首页数据
-  getHome = (params: any) => this.http.post(`/api/query`, params, {
+  getRecom = (params: any) => this.http.post(`/api/query`, params, {
     headers: {
       'X-Agent': 'Juejin/Web'
     }

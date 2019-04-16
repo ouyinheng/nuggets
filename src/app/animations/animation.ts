@@ -5,26 +5,54 @@ import {
 
 export const slideInAnimation =
   trigger('routeAnimation', [
-    transition('heroes <=> hero', [
-      style({ position: 'relative' }),
+    transition('* => login', [
+      // style({ position: 'relative' }),
+      query(':enter, :leave', [
+        style({
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100vh',
+          zIndex: '10000'
+        })
+      ]),
+      query(':enter', [
+        // style({ transform: 'translateY(0)'})
+      ]),
+      query(':leave', animateChild()),
+      group([
+        query(':leave', [
+          animate('300ms ease-out', style({ transform: 'translateY(-100vh)'}))
+        ]),
+        query(':enter', [
+          animate('300ms ease-out', style({ transform: 'translateY(0)'}))
+        ])
+      ]),
+      query(':enter', animateChild()),
+    ]),
+    transition('login => *', [
+      // style({ position: 'relative' }),
       query(':enter, :leave', [
         style({
           position: 'absolute',
           top: 0,
           left: 0,
-          width: '100%'
+          width: '100%',
+          height: '100vh',
+          zIndex: '10000'
         })
       ]),
       query(':enter', [
-        style({ left: '-100%'})
+        // style({ transform: 'translateY(0)'})
       ]),
       query(':leave', animateChild()),
       group([
-        query(':leave', [
-          animate('300ms ease-out', style({ left: '100%'}))
-        ]),
         query(':enter', [
-          animate('300ms ease-out', style({ left: '0%'}))
+          animate('300ms ease-out', style({ transform: 'translateY(0vh)'}))
+        ]),
+        query(':leave', [
+          animate('300ms ease-out', style({ transform: 'translateY(100vh)'}))
         ])
       ]),
       query(':enter', animateChild()),

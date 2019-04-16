@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class DynamicComponent implements OnInit {
 
   constructor() { }
-
+  username: string = '';
   ngOnInit() {
   }
 

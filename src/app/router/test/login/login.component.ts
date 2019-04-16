@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import {BookMallService} from '../../../request/test.request'
+import {BookMallService} from '../../../request/test.request';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,23 +12,22 @@ export class LoginComponent implements OnInit {
     @Inject('util') private util,
     private request: BookMallService
   ) { }
-  username:any='';
-  params:any = {
-    extensions: {query: {id: "21207e9ddb1de777adeaca7a2fb38030"}},
-    operationName: "",
-    query: "",
-    variables: {first: 20, after: "", order: "POPULAR"}
-  }
+  username: any = '';
+  params: any = {
+    extensions: {query: {id: '21207e9ddb1de777adeaca7a2fb38030'}},
+    operationName: '',
+    query: '',
+    variables: {first: 20, after: '', order: 'POPULAR'}
+  };
   ngOnInit() {
     this.service.showTitle();
-    let str = this.util.format('2019-04-11T02:39:00.247Z', '2019-04-11T07:40:59.017Z');
-    console.log(str)
+    const str: any = this.util.format('2019-04-11T02:39:00.247Z', '2019-04-11T07:40:59.017Z');
   }
   submit() {
-    this.request.getHome(this.params).subscribe((res:any) => {
+    this.request.getHome(this.params).subscribe((res: any) => {
       console.log(res);
-    }, (err:any) => {
-      console.log(err)
-    })
+    }, (err: any) => {
+      console.log(err);
+    });
   }
 }

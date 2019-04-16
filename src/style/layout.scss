@@ -3,3 +3,25 @@
     font-size: $var;
   }
 }
+.flex {
+  display: flex;
+}
+.between {
+  @extend .flex;
+  justify-content: space-between;
+}
+.around {
+  @extend .flex;
+  justify-content: space-around;
+}
+.-center {
+  align-items: center;
+}
+.between-column {
+  @extend .between;
+  flex-direction: column;
+}
+.around-column {
+  @extend .around;
+  flex-direction: column;
+}

@@ -7,5 +7,23 @@
     "pathRewrite": {
       "^/api": ""
     }
+  },
+  "/login": {
+    "target": "https://juejin.im/auth/type/phoneNumber",
+    "logLevel": "debug",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/login": ""
+    }
+  },
+  "/post": {
+    "target": "https://post-storage-api-ms.juejin.im/v1",
+    "logLevel": "debug",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/post": ""
+    }
   }
 }

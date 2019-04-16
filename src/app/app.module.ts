@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 // materail
@@ -9,7 +9,8 @@ import { AppComponent } from './app.component';
 import { RoutesModule } from './router/router.module';
 
 // util
-import { Utils } from './util/utils'
+import { Utils } from './util/utils';
+import { LoginService } from './core/login.service';
 @NgModule({
   declarations: [
     AppComponent
@@ -22,7 +23,8 @@ import { Utils } from './util/utils'
     HttpClientModule
   ],
   providers: [
-    {provide: 'util', useClass: Utils}
+    {provide: 'util', useClass: Utils},
+    { provide: 'userinfo', useClass: LoginService }
   ],
   bootstrap: [AppComponent]
 })

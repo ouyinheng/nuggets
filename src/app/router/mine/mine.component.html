@@ -1,35 +1,60 @@
 <div class="mine">
-  <header>我</header>
+  <header class="header">我</header>
+  <header></header>
   <section>
-    <div class="list-group headericon" (click)="toLogin()">
+    <button mat-button class="list-group headericon" (click)="toLogin()" *ngIf="!services.userinfo">
       <div>wo</div>
       <div></div>
+    </button>
+    <div class="list-group headericon flex" *ngIf="!!services.userinfo">
+      <div class="profile"><img [src]="services.userinfo.user.avatarLarge" alt=""></div>
+      <div class="between -center w-100">
+        <div>
+          <div class="font-lg username">{{ services.userinfo?.user?.username }}</div>
+          <div>{{ services.userinfo?.user?.jobTitle }}</div>
+        </div>
+        <div><span class="iconfont icon-right"></span></div>
+      </div>
     </div>
     <ul class="list-group">
-      <li class="list-items">
+      <button mat-button class="list-items">
         <span class="iconfont icon-xiaoxi1"></span>
         <span>消息中心</span>
-      </li>
-      <li class="list-items">
+      </button>
+      <button mat-button class="list-items">
         <span class="iconfont icon-zan"></span>
         <span>我赞过的</span>
-      </li>
-      <li class="list-items">
+      </button>
+      <button mat-button class="list-items">
         <span class="iconfont icon-shoucang"></span>
         <span>收藏集</span>
-      </li>
-      <li class="list-items">
+      </button>
+      <button mat-button class="list-items">
         <span class="iconfont icon-bao"></span>
         <span>已购小册</span>
-      </li>
-      <li class="list-items">
+      </button>
+      <button mat-button class="list-items">
         <span class="iconfont icon-yuedu"></span>
         <span>阅读过的文章</span>
-      </li>
-      <li class="list-items">
+      </button>
+      <button mat-button class="list-items">
         <span class="iconfont icon-biaoqian"></span>
         <span>标签管理</span>
-      </li>
+      </button>
+    </ul>
+    <ul class="list-group">
+      <button mat-button class="list-items">
+        <span class="iconfont icon-yejianmoshi"></span>
+        <span>夜间模式</span>
+      </button>
+      <button mat-button class="list-items">
+        <span class="iconfont icon-yijianfankui"></span>
+        <span>意见反馈</span>
+      </button>
+      <button mat-button class="list-items">
+        <span class="iconfont icon-shezhi"></span>
+        <span>设置</span>
+      </button>
     </ul>
   </section>
 </div>

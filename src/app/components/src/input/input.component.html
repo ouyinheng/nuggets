@@ -1,0 +1,31 @@
+<div class="app-input">
+  <div [class]="'input-group mb-3'+_sizeClass">
+    <div class="input-group-prepend">
+      <span class="input-group-text">
+        <ng-content select="[name=prepend]"></ng-content>
+      </span>
+    </div>
+    <input
+      *ngIf="type!='textarea'"
+      #inputElement 
+      [type]="type" 
+      class="form-control" 
+      [placeholder]="placeholder" 
+      [ngModel]="childStatus"
+      (ngModelChange)="onModelChange($event)"
+    >
+    <textarea
+      *ngIf="type=='textarea'"
+      #inputElement
+      class="form-control" 
+      [placeholder]="placeholder" 
+      [ngModel]="childStatus"
+      (ngModelChange)="onModelChange($event)"
+    ></textarea>
+    <div class="input-group-append">
+      <span class="input-group-text">
+        <ng-content select="[name=append]"></ng-content>
+      </span>
+    </div>
+  </div>
+</div>

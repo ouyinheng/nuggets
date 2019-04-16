@@ -1,3 +1,45 @@
-<p>
-  dynamic works!
-</p>
+<div class="dynamic">
+  <div>
+    <app-button type="primary">primary</app-button>
+    <app-button type="secondary">secondary</app-button>
+    <app-button type="success">success</app-button>
+    <app-button type="danger">danger</app-button>
+    <app-button type="warning">warning</app-button>
+    <app-button type="info">info</app-button>
+    <app-button type="dark">Dark</app-button>
+    <app-button type="link">link</app-button>
+  </div>
+  <div>
+    <app-button type="primary" plain>primary</app-button>
+    <app-button type="secondary" plain>secondary</app-button>
+    <app-button type="success" plain>success</app-button>
+    <app-button type="danger" plain>danger</app-button>
+    <app-button type="warning" plain>warning</app-button>
+    <app-button type="info" plain>info</app-button>
+    <app-button type="link" plain>link</app-button>
+  </div>
+  <div>
+    <app-button type="primary" size="lg">primary</app-button>
+    <app-button type="primary" size="block">primary</app-button>
+    <app-button type="primary" size="sm">primary</app-button>
+  </div>
+  <div>
+    <app-button type="primary" size="lg" disabled>primary</app-button>
+  </div>
+  <div>
+    <app-input type="text" placeholder="请输入值" [(value)]="username"></app-input>
+    <app-input type="text" placeholder="请输入值" [(value)]="username">
+      <div name="prepend">tag_</div>
+    </app-input>
+    <app-input type="text" placeholder="请输入值" [(value)]="username">
+      <div name="append">tag_</div>
+    </app-input>
+    <app-input type="textarea" placeholder="请输入值" [(value)]="username">
+      <div name="append">tag_</div>
+    </app-input>
+  </div>
+  <div>
+    <app-input type="text" placeholder="请输入值" [(value)]="username" size="sm"></app-input>
+    <app-input type="text" placeholder="请输入值" [(value)]="username" size="lg"></app-input>
+  </div>
+</div>

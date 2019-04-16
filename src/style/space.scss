@@ -1,5 +1,48 @@
-@for $var from 1 to 10 {
-  .m-#{$var} {
-    margin: 100px;
-  }
+@each $key,$value in $space {
+  .p-#{$key} {
+    padding: $value;
+  };
+  .pl-#{$key} {
+    padding-left: $value;
+  };
+  .pr-#{$key} {
+    padding-right: $value;
+  };
+  .pt-#{$key} {
+    padding-top: $value;
+  };
+  .pb-#{$key} {
+    padding-bottom: $value;
+  };
+  .px-#{$key} {
+    padding-left: $value;
+    padding-right: $value;
+  };
+  .py-#{$key} {
+    padding-top: $value;
+    padding-bottom: $value;
+  };
+  .m-#{$key} {
+    margin: $value;
+  };
+  .ml-#{$key} {
+    margin-left: $value;
+  };
+  .mr-#{$key} {
+    margin-right: $value;
+  };
+  .mt-#{$key} {
+    margin-top: $value;
+  };
+  .mb-#{$key} {
+    margin-bottom: $value;
+  };
+  .mx-#{$key} {
+    margin-left: $value;
+    margin-right: $value;
+  };
+  .my-#{$key} {
+    margin-top: $value;
+    margin-bottom: $value;
+  };
 }
