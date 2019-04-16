@@ -5,6 +5,9 @@
         <ng-content select="[name=prepend]"></ng-content>
       </span>
     </div>
+    <div class="input-group-prepend">
+      <ng-content select="[name=btn-prepend]"></ng-content>
+    </div>
     <input
       *ngIf="type!='textarea'"
       #inputElement 
@@ -26,6 +29,9 @@
       <span class="input-group-text">
         <ng-content select="[name=append]"></ng-content>
       </span>
+    </div>
+    <div class="input-group-append">
+      <ng-content select="[name=btn-append]"></ng-content>
     </div>
   </div>
 </div>

@@ -7,9 +7,15 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges, Output, EventEmitte
 export class InputComponent implements OnInit,OnChanges {
   @Input()type: string = 'text';
   @Input() placeholder: string = '';
-
+  _value:string|number;
   @ViewChild('inputElement') inputElement: ElementRef;
-  @Input() value:any;
+  @Input()
+  get value() {
+    return this._value;
+  }
+  set value(val: string | number) {
+    this._value = val;
+  }
   @Output() valueChange:EventEmitter<any> = new EventEmitter();
 
   _sizeClass: string = '';
@@ -24,7 +30,8 @@ export class InputComponent implements OnInit,OnChanges {
   ) { }
   ngOnInit() {
     this.valueChange.emit('');
-    document.querySelectorAll('.input-group-text').forEach((item:any) => {
+    let dom: any = document.querySelectorAll('.input-group-text');
+    dom.forEach((item:any) => {
       if(item.children.length==0) {
         item.parentNode.removeChild(item)
       }

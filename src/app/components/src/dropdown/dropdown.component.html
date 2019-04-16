@@ -1,0 +1,23 @@
+<div class="input-group mb-3">
+  <div [ngClass]="{
+   ' input-group-prepend': true,
+    show: toggles
+  }">
+    <div (click)="!$splitbutton&&toggle()">
+      <ng-content></ng-content>
+      <button *ngIf="$splitbutton" type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" (click)="toggle()">
+        <span class="sr-only">Toggle Dropdown</span>
+      </button>
+    </div>
+    <div 
+      [ngClass]="{
+        'dropdown-menu': true,
+        show: toggles
+      }"
+      (click)="toggle()"
+    >
+      <ng-content select="[slot=dropdown]"></ng-content>
+    </div>
+  </div>
+</div>
+

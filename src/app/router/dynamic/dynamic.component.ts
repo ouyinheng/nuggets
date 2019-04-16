@@ -11,5 +11,7 @@ export class DynamicComponent implements OnInit {
   username: string = '';
   ngOnInit() {
   }
-
+  testClick() {
+    console.log('click')
+  }
 }
