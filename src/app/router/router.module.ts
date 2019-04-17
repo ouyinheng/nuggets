@@ -9,16 +9,17 @@ import { LoginComponent } from './login/login.component';
     CommonModule,
     ShareModule,
     RouterModule.forRoot([
-      { path: '', redirectTo: 'main/home', pathMatch: 'full' },
+      { path: '', redirectTo: 'test', pathMatch: 'full' },
       { path: 'login', component: LoginComponent, data: { animation: 'login' }},
+      { path: 'test', loadChildren: './test/testRouter.module#TestModule' },
       { path: 'main',
         component: MainComponent,
         children: [
-          { path: 'home', loadChildren: '../home/homeRouter.module#HomeModule' },
-          { path: 'dynamic', loadChildren: '../dynamic/dynamicRouter.module#DynamicModule' },
-          { path: 'brochure', loadChildren: '../brochure/brochureRouter.module#BrochureModule' },
-          { path: 'search', loadChildren: '../search/searchRouter.module#SearchModule' },
-          { path: 'mine', loadChildren: '../mine/mineRouter.module#MineModule' }
+          { path: 'home', loadChildren: './home/homeRouter.module#HomeModule' },
+          { path: 'dynamic', loadChildren: './dynamic/dynamicRouter.module#DynamicModule' },
+          { path: 'brochure', loadChildren: './brochure/brochureRouter.module#BrochureModule' },
+          { path: 'search', loadChildren: './search/searchRouter.module#SearchModule' },
+          { path: 'mine', loadChildren: './mine/mineRouter.module#MineModule' }
         ]
       }
     ])

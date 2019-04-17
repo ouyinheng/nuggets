@@ -1,27 +1,44 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { TestService } from '../../core/test.service';
 
-import { LoginComponent } from './login/login.component';
+import { ShareModule } from '../../components/share.module';
+import { ShowComponent } from './show/show.component';
+import { ShowlistComponent } from './showlist/showlist.component';
+// component
+
+import { ButtonComponent } from './component/button/button.component';
+import { InputComponent } from './component/input/input.component';
+import { DropdownComponent } from './component/dropdown/dropdown.component';
+import { SelectComponent } from './component/select/select.component';
+import { ListComponent } from './component/list/list.component';
+import { MessageComponent } from './component/message/message.component';
 @NgModule({
   imports: [
+    CommonModule,
+    ShareModule,
     RouterModule.forChild([
-      {
-        path: '',
-        component: LoginComponent,
-        children: [
-          { path: 'home', loadChildren: '../home/homeRouter.module#HomeModule' },
-          { path: 'dynamic', loadChildren: '../dynamic/dynamicRouter.module#DynamicModule' },
-          { path: 'brochure', loadChildren: '../brochure/brochureRouter.module#BrochureModule' },
-          { path: '', loadChildren: '../search/searchRouter.module#SearchModule' },
-          { path: 'mine', loadChildren: '../mine/mineRouter.module#MineModule' }
-        ]
-      }
+      // { path: '', component: ShowComponent },
+      { path: '', component: ShowlistComponent},
+      { path: 'button', component: ButtonComponent},
+      { path: 'input', component: InputComponent},
+      { path: 'dropdown', component: DropdownComponent},
+      { path: 'select', component: SelectComponent},
+      { path: 'list', component: ListComponent},
+      { path: 'message', component: MessageComponent}
     ])
   ],
-  declarations: [LoginComponent],
+  declarations: [
+    ShowComponent,
+    ShowlistComponent,
+    ButtonComponent,
+    InputComponent,
+    DropdownComponent,
+    SelectComponent,
+    ListComponent,
+    MessageComponent
+  ],
   providers: [
-    {provide: 'test', useClass: TestService}
   ],
   exports: [ RouterModule ]
 })

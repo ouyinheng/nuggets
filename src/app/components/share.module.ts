@@ -7,7 +7,11 @@ import { InputComponent } from './src/input/input.component';
 import { DropdownComponent } from './src/dropdown/dropdown.component';
 import { DropdownItemComponent } from './src/dropdown-item/dropdown-item.component';
 import { SelectComponent } from './src/select/select.component';
-import { OptionComponent } from './src/option/option.component';
+import { InputNumberComponent } from './src/input-number/input-number.component';
+import { ListGroupComponent } from './src/list-group/list-group.component';
+import { ListItemComponent } from './src/list-item/list-item.component';
+import { CardComponent } from './src/card/card.component';
+import { MessageComponent } from './src/message/message.component';
 @NgModule({
   imports: [
     CustomModule,
@@ -21,7 +25,11 @@ import { OptionComponent } from './src/option/option.component';
     DropdownComponent,
     DropdownItemComponent,
     SelectComponent,
-    OptionComponent
+    InputNumberComponent,
+    ListGroupComponent,
+    ListItemComponent,
+    CardComponent,
+    MessageComponent
   ],
   exports: [
     CustomModule,
@@ -31,7 +39,11 @@ import { OptionComponent } from './src/option/option.component';
     DropdownComponent,
     DropdownItemComponent,
     SelectComponent,
-    OptionComponent
+    InputNumberComponent,
+    ListGroupComponent,
+    ListItemComponent
+  ],
+  providers: [
   ]
 })
 export class ShareModule {

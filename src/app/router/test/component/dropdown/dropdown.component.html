@@ -1,0 +1,23 @@
+ <div class="dropdown">
+ <!-- Dropdown -->
+ <p class="text-muted">基础用法</p>
+  <app-dropdown>
+    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
+    <div slot="dropdown">
+      <app-dropdown-item (click)="testClick()">asdf</app-dropdown-item>
+      <app-dropdown-item>asdf</app-dropdown-item>
+      <app-dropdown-item>asdf</app-dropdown-item>
+      <app-dropdown-item>asdf</app-dropdown-item>
+    </div>
+  </app-dropdown>
+  <p class="text-muted">触发对象</p>
+  <app-dropdown split-button>
+    <button type="button" class="btn btn-outline-secondary">Action</button>
+    <div slot="dropdown">
+      <app-dropdown-item (click)="testClick()">asdf</app-dropdown-item>
+      <app-dropdown-item>asdf</app-dropdown-item>
+      <app-dropdown-item>asdf</app-dropdown-item>
+      <app-dropdown-item>asdf</app-dropdown-item>
+    </div>
+  </app-dropdown>
+</div>

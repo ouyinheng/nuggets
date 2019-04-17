@@ -23,7 +23,7 @@ import { LoginService } from './core/login.service';
     HttpClientModule
   ],
   providers: [
-    {provide: 'util', useClass: Utils},
+    { provide: 'util', useClass: Utils },
     { provide: 'userinfo', useClass: LoginService }
   ],
   bootstrap: [AppComponent]

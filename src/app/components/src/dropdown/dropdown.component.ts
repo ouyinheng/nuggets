@@ -6,16 +6,16 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./dropdown.component.scss']
 })
 export class DropdownComponent implements OnInit {
-  $splitbutton: boolean = false;
+  $splitbutton = false;
   @Input('split-button')
   get splitbutton() {
     return this.$splitbutton;
   }
   set splitbutton(val: any) {
-    let bool = JSON.stringify(val);
+    const bool = JSON.stringify(val);
     this.$splitbutton = bool === 'false' ? false : true;
   }
-  toggles: boolean = false;
+  toggles = false;
   constructor() { }
 
   ngOnInit() {
@@ -24,6 +24,6 @@ export class DropdownComponent implements OnInit {
     this.toggles = !this.toggles;
   }
   test() {
-    console.log('this is test')
+    console.log('this is test');
   }
 }

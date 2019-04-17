@@ -47,5 +47,4 @@ import {
   ]
 })
 export class MaterialModule {
-
 }

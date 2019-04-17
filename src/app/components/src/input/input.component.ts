@@ -4,10 +4,10 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges, Output, EventEmitte
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.scss']
 })
-export class InputComponent implements OnInit,OnChanges {
-  @Input()type: string = 'text';
-  @Input() placeholder: string = '';
-  _value:string|number;
+export class InputComponent implements OnInit, OnChanges {
+  @Input()type = 'text';
+  @Input() placeholder = '';
+  _value: string|number;
   @ViewChild('inputElement') inputElement: ElementRef;
   @Input()
   get value() {
@@ -18,30 +18,30 @@ export class InputComponent implements OnInit,OnChanges {
   }
   @Output() valueChange:EventEmitter<any> = new EventEmitter();
 
-  _sizeClass: string = '';
-  @Input() 
+  _sizeClass = '';
+  @Input()
   get size() {
     return this._sizeClass;
   }
   set size(val: string) {
-    this._sizeClass = ' input-group-'+ val;
+    this._sizeClass = ' input-group-' + val;
   }
   constructor(
   ) { }
   ngOnInit() {
     this.valueChange.emit('');
-    let dom: any = document.querySelectorAll('.input-group-text');
-    dom.forEach((item:any) => {
-      if(item.children.length==0) {
-        item.parentNode.removeChild(item)
+    const dom: any = document.querySelectorAll('.input-group-text');
+    dom.forEach((item: any) => {
+      if (item.children.length === 0) {
+        item.parentNode.removeChild(item);
       }
-    })
+    });
   }
   ngOnChanges(changes: SimpleChanges) {
     // console.log(changes)
   }
   onModelChange(e: any) {
-    this.value = e
+    this.value = e;
     this.valueChange.emit(e);
   }
 }

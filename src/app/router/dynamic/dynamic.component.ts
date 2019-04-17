@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-dynamic',
   templateUrl: './dynamic.component.html',
@@ -7,11 +6,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DynamicComponent implements OnInit {
 
-  constructor() { }
-  username: string = '';
+  constructor(
+  ) { }
   ngOnInit() {
-  }
-  testClick() {
-    console.log('click')
   }
 }

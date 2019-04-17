@@ -1,0 +1,26 @@
+<div class="input">
+  <p class="text-muted">基础用法</p>
+  <app-input type="text" placeholder="请输入值" [(value)]="username"></app-input>
+  <p class="text-muted">复合型输入框</p>
+  <app-input type="text" placeholder="请输入值" [(value)]="username">
+    <div name="prepend">tag_</div>
+  </app-input>
+  <app-input type="text" placeholder="请输入值" [(value)]="username">
+    <div name="append">tag_</div>
+  </app-input>
+  <app-input type="textarea" placeholder="请输入值" [(value)]="username">
+    <div name="append">tag_</div>
+  </app-input>
+  <!-- 带按钮的输入框 -->
+  <app-input type="text" placeholder="请输入值" [(value)]="username">
+      <app-button name="btn-prepend" type="primary" plain>primary</app-button>
+    </app-input>
+    <app-input type="text" placeholder="请输入值" [(value)]="username">
+      <app-button name="btn-append" type="primary" plain>primary</app-button>
+    </app-input>
+  <p class="text-muted">尺寸</p>
+  <div class="size">
+    <app-input type="text" placeholder="请输入值" [(value)]="username" size="sm"></app-input>
+    <app-input type="text" placeholder="请输入值" [(value)]="username" size="lg"></app-input>
+  </div>
+</div>

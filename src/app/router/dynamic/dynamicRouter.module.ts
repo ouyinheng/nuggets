@@ -10,7 +10,7 @@ import { ShareModule } from '../../components/share.module';
     FormsModule,
     ShareModule,
     RouterModule.forChild([
-      {path: '', component: DynamicComponent}
+      {path: '', component: DynamicComponent }
     ])
   ],
   declarations: [DynamicComponent],
